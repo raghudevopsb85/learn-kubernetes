@@ -31,7 +31,6 @@ spec:
     ports:
     - containerPort: 80
   - name: bare
-    image: rkalluru/learnk8s:rhel9-bare
-    ports:
-    - containerPort: 80
+    image: redhat/ubi9
+
 
