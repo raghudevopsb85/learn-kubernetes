@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-storage-01
+  name: env-vars-01
 spec:
   containers:
     - name: test
