@@ -3,15 +3,15 @@ kind: ConfigMap
 metadata:
   name: frontend
 data:
-  CATALOGUE_HOST : "catalogue-dev.rdevopsb85.online"
+  CATALOGUE_HOST : "catalogue"
   CATALOGUE_PORT : "8080"
-  USER_HOST      : "user-dev.rdevopsb85.online"
+  USER_HOST      : "user"
   USER_PORT      : "8080"
-  CART_HOST      : "cart-dev.rdevopsb85.online"
+  CART_HOST      : "cart"
   CART_PORT      : "8080"
-  SHIPPING_HOST  : "shipping-dev.rdevopsb85.online"
+  SHIPPING_HOST  : "shipping"
   SHIPPING_PORT  : "8080"
-  PAYMENT_HOST   : "payment-dev.rdevopsb85.online"
+  PAYMENT_HOST   : "payment"
   PAYMENT_PORT   : "8080"
 ---
 apiVersion: v1
@@ -32,7 +32,7 @@ metadata:
   name: cart
 data:
   REDIS_HOST     : "redis-dev.rdevopsb85.online"
-  CATALOGUE_HOST : "catalogue-dev.rdevopsb85.online"
+  CATALOGUE_HOST : "catalogue"
   CATALOGUE_PORT : "8080"
 
 ---
@@ -51,7 +51,7 @@ kind: ConfigMap
 metadata:
   name: shipping
 data:
-        CART_ENDPOINT : "cart-dev.rdevopsb85.online:8080"
+        CART_ENDPOINT : "cart:8080"
         DB_HOST       : "mysql-dev.rdevopsb85.online"
         DB_USER       : "root"
         DB_PASS       : "RoboShop@1"
@@ -63,9 +63,9 @@ kind: ConfigMap
 metadata:
   name: payment
 data:
-        CART_HOST : "cart-dev.rdevopsb85.online"
+        CART_HOST : "cart"
         CART_PORT : "8080"
-        USER_HOST : "user-dev.rdevopsb85.online"
+        USER_HOST : "user"
         USER_PORT : "8080"
         AMQP_HOST : "rabbitmq-dev.rdevopsb85.online"
         AMQP_USER : "roboshop"
