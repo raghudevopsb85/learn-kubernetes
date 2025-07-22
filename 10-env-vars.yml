@@ -6,3 +6,7 @@ spec:
   containers:
     - name: test
       image: rkalluru/learnk8s:rhel9-bare
+      env:
+        - name: URL
+          value: google.com
+
