@@ -20,7 +20,9 @@ spec:
       containers:
       - name: frontend
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/frontend
-
+        envFrom:
+        - configMapRef:
+            name: frontend
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -44,6 +46,9 @@ spec:
       containers:
       - name: cart
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/cart
+        envFrom:
+        - configMapRef:
+            name: cart
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -67,6 +72,9 @@ spec:
       containers:
       - name: catalogue
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/catalogue
+        envFrom:
+        - configMapRef:
+            name: catalogue
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -90,6 +98,9 @@ spec:
       containers:
       - name: user
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/user
+        envFrom:
+        - configMapRef:
+            name: user
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -113,6 +124,9 @@ spec:
       containers:
       - name: shipping
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/shipping
+        envFrom:
+        - configMapRef:
+            name: shipping
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -136,6 +150,9 @@ spec:
       containers:
       - name: payment
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/payment
+        envFrom:
+        - configMapRef:
+            name: payment
 ---
 apiVersion: batch/v1
 kind: Job
@@ -147,6 +164,9 @@ spec:
       containers:
       - name: schema
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        envFrom:
+        - configMapRef:
+            name: catalogue
       restartPolicy: Never
   backoffLimit: 0
 ---
@@ -160,6 +180,9 @@ spec:
       containers:
       - name: app-user
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        envFrom:
+        - configMapRef:
+            name: shipping
       restartPolicy: Never
   backoffLimit: 0
 ---
@@ -173,6 +196,9 @@ spec:
       containers:
       - name: master-data
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        envFrom:
+        - configMapRef:
+            name: shipping
       restartPolicy: Never
   backoffLimit: 0
 ---
@@ -186,6 +212,9 @@ spec:
       containers:
       - name: schema
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        envFrom:
+        - configMapRef:
+            name: shipping
       restartPolicy: Never
   backoffLimit: 0
 
