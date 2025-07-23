@@ -5,11 +5,11 @@ metadata:
 spec:
   hard:
     pods: "2"
-    scopeSelector:
-      matchExpressions:
-      - operator: In
-        scopeName: PriorityClass
-        values: ["high"]
+  scopeSelector:
+    matchExpressions:
+    - operator: In
+      scopeName: PriorityClass
+      values: ["high"]
 ---
 apiVersion: v1
 kind: ResourceQuota
@@ -18,11 +18,11 @@ metadata:
 spec:
   hard:
     pods: "2"
-    scopeSelector:
-      matchExpressions:
-      - operator: In
-        scopeName: PriorityClass
-        values: ["low"]
+  scopeSelector:
+    matchExpressions:
+    - operator: In
+      scopeName: PriorityClass
+      values: ["low"]
 ---
 apiVersion: v1
 kind: Pod
