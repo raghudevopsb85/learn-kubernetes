@@ -49,7 +49,7 @@ kind: Pod
 metadata:
   name: app1
 spec:
-  serviceAccountName:
+  serviceAccountName: app1
   containers:
   - name: debug
     image: rkalluru/debug
