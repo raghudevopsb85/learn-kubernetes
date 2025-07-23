@@ -11,7 +11,7 @@ spec:
     requests.nvidia.com/gpu: 4
     configmaps: "10"
     persistentvolumeclaims: "4"
-    pods: "4"
+    pods: "1"
     replicationcontrollers: "20"
     secrets: "10"
     services: "10"
