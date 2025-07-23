@@ -68,7 +68,6 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: debug
-  namespace: web
 spec:
   containers:
     - name: debug
