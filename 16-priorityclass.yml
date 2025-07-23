@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: high
+  name: low
 spec:
   hard:
     pods: "2"
