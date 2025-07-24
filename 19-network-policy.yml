@@ -73,38 +73,38 @@ spec:
     - name: debug
       image: rkalluru/debug
 ---
-# apiVersion: networking.k8s.io/v1
-# kind: NetworkPolicy
-# metadata:
-#   name: app-np-allow-complete-ns
-#   namespace: app
-# spec:
-#   podSelector:
-#     matchLabels:
-#       appType: app
-#   policyTypes:
-#   - Ingress
-#   - Egress
-#   ingress:
-#   - from:
-#     - namespaceSelector:
-#         matchLabels:
-#           ns: web
-#     - podSelector:
-#         matchLabels:
-#           appType: web
-#     ports:
-#     - protocol: TCP
-#       port: 80
-#   egress:
-#     - {}
----
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: default-deny-egress
+  name: app-np-allow-complete-ns
   namespace: app
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      appType: app
   policyTypes:
+  - Ingress
   - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          ns: web
+    - podSelector:
+        matchLabels:
+          appType: web
+    ports:
+    - protocol: TCP
+      port: 80
+  egress:
+    - {}
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: NetworkPolicy
+# metadata:
+#   name: default-deny-egress
+#   namespace: app
+# spec:
+#   podSelector: {}
+#   policyTypes:
+#   - Egress
