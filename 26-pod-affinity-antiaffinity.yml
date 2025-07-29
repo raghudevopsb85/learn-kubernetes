@@ -51,7 +51,7 @@ spec:
         podAffinityTerm:
           labelSelector:
             matchExpressions:
-            - key: security
+            - key: appName
               operator: In
               values:
               - S2
