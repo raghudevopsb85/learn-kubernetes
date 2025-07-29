@@ -15,4 +15,4 @@ spec:
           - key: affinity1
             operator: In
             values:
-            - two
+            - "two"
