@@ -1,0 +1,18 @@
+#kubectl label node ip-172-31-18-75.ec2.internal affinity1=one
+#kubectl label node ip-172-31-81-241.ec2.internal affinity1=one
+#kubectl label node ip-172-31-91-19.ec2.internal affinity1=one
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: affinity1
+            operator: In
+            values:
+            - two
