@@ -16,7 +16,7 @@ spec:
         nodeSelectorTerms:
         - matchExpressions:
           - key: affinity1
-            operator: NotIn
+            operator: In
             values:
             - "two"
 ---
