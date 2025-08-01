@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-already-created-disk
+spec:
+  capacity:
+    storage: 1Gi # Specify the exact size of your EBS volume
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  awsElasticBlockStore:
+    volumeID: vol-0c73950ae23ba5106
+    fsType: ext4
+
+
