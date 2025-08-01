@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-already-created-disk
+  name: pv-already-created-disk-1
 spec:
   capacity:
     storage: 1Gi # Specify the exact size of your EBS volume
@@ -22,7 +22,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: pv-already-created-disk
+  volumeName: pv-already-created-disk-1
   storageClassName: null
 ---
 apiVersion: v1
