@@ -11,5 +11,18 @@ spec:
   awsElasticBlockStore:
     volumeID: vol-0c73950ae23ba5106
     fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-from-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: pv-already-created-disk
+  storageClassName: null
 
 
