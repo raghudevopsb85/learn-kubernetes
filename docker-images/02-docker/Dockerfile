@@ -6,4 +6,5 @@ ENV           URL1=google.com
 USER          bin
 WORKDIR       /etc
 #ENTRYPOINT    ["id"]
+RUN           dnf install ping -y
 ENTRYPOINT    ["ping", "-c", "3"]
