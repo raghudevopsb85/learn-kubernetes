@@ -5,4 +5,4 @@ RUN           echo $URL
 ENV           URL1=google.com
 USER          bin
 WORKDIR       /etc
-ENTRYPOINT    id
+ENTRYPOINT    ["id"]
