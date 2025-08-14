@@ -6,5 +6,5 @@ ENV           URL1=google.com
 USER          bin
 WORKDIR       /etc
 #ENTRYPOINT    ["id"]
-RUN           dnf install ping -y
+RUN           dnf install iputils* -y
 ENTRYPOINT    ["ping", "-c", "3"]
